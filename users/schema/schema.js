@@ -2,7 +2,8 @@ const graphql = require('graphql');
 const {
     GraphQLObjectType,
     GraphQLString,
-    GraphQLInt
+    GraphQLInt,
+    GraphQLSchema
 } = graphql;
 const _= require('lodash');
 
@@ -32,4 +33,8 @@ const RootQuery = new GraphQLObjectType({
             }
         }
     }
+});
+
+module.exports = new GraphQLSchema({
+    query: RootQuery
 });
